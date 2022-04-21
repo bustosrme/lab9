@@ -1,14 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes  } from "react-router-dom";
 import './index.css';
 import App from './App';
+import AboutUs from './pages/AboutUs';
+import Contact from './pages/Contact';
+import Jobs from './pages/Jobs';
+import News from './pages/News';
+import Services from './pages/Services';
+import Error404 from './pages/Error404';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Routes>
+        <Route exact path='/' element={<App />} />
+        <Route exact path='/services' element={<Services />} />
+        <Route exact path='/jobs' element={<Jobs />} />
+        <Route exact path='/about' element={<AboutUs />} />
+        <Route exact path='/news' element={<News />} />
+        <Route exact path='/contact' element={<Contact />} />
+        <Route path='*' element={<Error404 />} />
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
