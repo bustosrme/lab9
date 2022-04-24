@@ -1,17 +1,16 @@
 import React from 'react';
 import { FaFacebookSquare, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
-
+import { Link } from "react-router-dom";
 const Footer = () => {
     return (
-        <div className='shadow-2xl mt-10 text-gray-700'>
+        <div className='shadow-xl mt-10 text-gray-700'>
             <footer className="footer p-10 bg-white ">
-                <div className="items-center grid-flow-col">
-                    <img src={require("../Logo-footer.png")} className="w-32 p-4" />
+                <div className="items-center grid-flow-col w-full">
+                    <Link to='/'>
+                        <img src={require("../Logo-footer.png")} className="w-32 p-4" />
+                    </Link>
                 </div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div>
+                <div className='lg:ml-80'>
                     <a className="link link-hover">Marketing Digital</a>
                     <a className="link link-hover">Innovación Empresarial</a>
                     <a className="link link-hover">Desing Sprint</a>
@@ -26,8 +25,8 @@ const Footer = () => {
                     <a className="link link-hover">Sumate</a>
                     <a className="link link-hover">Contacto</a>
                 </div>
-                <div className="md:place-self-center md:justify-self-end">
-                    <div className="grid grid-flow-col gap-4">
+                <div className="md:justify-self-end">
+                    <div className="grid grid-flow-col gap-4 text-blue-700">
                         <a href='https://www.facebook.com/lab9.digital.agency' target={'_blank'}><FaFacebookSquare size={30} /></a>
                         <a href='https://www.instagram.com/lab9.agencia/' target={'_blank'}><FaInstagram size={30} /></a>
                         <a href='https://www.linkedin.com/company/lab-9-agencia-digital' target={'_blank'}><FaLinkedin size={30} /></a>
