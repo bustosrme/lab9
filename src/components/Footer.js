@@ -25,7 +25,7 @@ const Footer = () => {
                     <a className="link link-hover">Sumate</a>
                     <a className="link link-hover">Contacto</a>
                 </div>
-                <div className="md:justify-self-end">
+                <div className="justify-self-end">
                     <div className="grid grid-flow-col gap-4 text-blue-700">
                         <a href='https://www.facebook.com/lab9.digital.agency' target={'_blank'}><FaFacebookSquare size={30} /></a>
                         <a href='https://www.instagram.com/lab9.agencia/' target={'_blank'}><FaInstagram size={30} /></a>
