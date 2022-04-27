@@ -1,10 +1,23 @@
 import { NavLink } from "react-router-dom";
-import React from 'react';
+import React, { useState } from 'react';
 
-const navbar = (props) => {
+const Navbar = (props) => {
+    const [fondo, setFondo] = useState(props.principal === "true")
+    const cambiarFondo = () => {
+        if (props.principal === "true") {
+            if (window.scrollY < 400) {
+                setFondo(true);
+            }
+            else{
+                setFondo(false);
+            }
+        }
+    }
+    window.addEventListener('scroll', cambiarFondo);
     return (
         <header>
-            <div className={`fixed z-10 top-0 navbar text-white ${props.fondo} h-20`}>
+            <div className={fondo ? "navbar fixed z-10 top-0 text-white fondo h-20 font-chivo font-bold bg-transparent" :
+                "navbar fixed z-10 top-0 text-white fondo h-20 font-chivo font-bold bg-blue-700"}>
                 <div className="navbar-start bg-blue">
                     <div className="dropdown">
                         <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -14,50 +27,42 @@ const navbar = (props) => {
                         <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><NavLink style={({ isActive }) =>
                                 isActive ? {
-                                        color: '#fff',
-                                        background: '#3B82F6',
-                                    }
-                                    : {  }} to="/services">Servicios</NavLink></li>
+                                    color: '#fff',
+                                    background: '#3B82F6',
+                                }
+                                    : {}} to="/services">Servicios</NavLink></li>
                             <li><NavLink style={({ isActive }) =>
                                 isActive ? {
-                                        color: '#fff',
-                                        background: '#3B82F6',
-                                    }
-                                    : {  }} to="/jobs">Trabajos</NavLink></li>
+                                    color: '#fff',
+                                    background: '#3B82F6',
+                                }
+                                    : {}} to="/jobs">Trabajos</NavLink></li>
                             <li><NavLink style={({ isActive }) =>
                                 isActive
                                     ? {
                                         color: '#fff',
                                         background: '#3B82F6',
                                     }
-                                    : {  }} to="/about">Nosotros</NavLink></li>
+                                    : {}} to="/about">Nosotros</NavLink></li>
                             <li><NavLink style={({ isActive }) =>
                                 isActive
                                     ? {
                                         color: '#fff',
                                         background: '#3B82F6',
                                     }
-                                    : {  }} to="/news">Noticias</NavLink></li>
+                                    : {}} to="/news">Noticias</NavLink></li>
                             <li><NavLink style={({ isActive }) =>
                                 isActive
                                     ? {
                                         color: '#fff',
                                         background: '#3B82F6',
                                     }
-                                    : {  }} to="/contact">Contacto</NavLink></li>
+                                    : {}} to="/contact">Contacto</NavLink></li>
                         </ul>
                     </div>
-                    <NavLink style={({ isActive }) =>
-                        isActive
-                            ? {
-                                color: '#fff',
-                                background: '#3B82F6',
-                            }
-                            : {  }} to="/">
-                        <img src={require("../logo.png")} className="w-32 p-7" />
-                    </NavLink>
+                    <NavLink to="/"><img src={require("../logo.png")} alt='Inicio' className="w-32 m-2 p-7" /></NavLink>
                 </div>
-                <div className="navbar-end hidden lg:flex">
+                <div className="navbar-end hidden mr-7 lg:flex">
                     <ul className="menu menu-horizontal p-0">
                         <li><NavLink style={({ isActive }) =>
                             isActive
@@ -65,35 +70,35 @@ const navbar = (props) => {
                                     color: '#fff',
                                     background: '#3B82F6',
                                 }
-                                : {  }} to="/services">Servicios</NavLink></li>
+                                : {}} to="/services">Servicios</NavLink></li>
                         <li><NavLink style={({ isActive }) =>
                             isActive
                                 ? {
                                     color: '#fff',
                                     background: '#3B82F6',
                                 }
-                                : {  }} to="/jobs">Trabajos</NavLink></li>
+                                : {}} to="/jobs">Trabajos</NavLink></li>
                         <li><NavLink style={({ isActive }) =>
                             isActive
                                 ? {
                                     color: '#fff',
                                     background: '#3B82F6',
                                 }
-                                : {  }} to="/about">Nosotros</NavLink></li>
+                                : {}} to="/about">Nosotros</NavLink></li>
                         <li><NavLink style={({ isActive }) =>
                             isActive
                                 ? {
                                     color: '#fff',
                                     background: '#3B82F6',
                                 }
-                                : {  }} to="/news">Noticias</NavLink></li>
+                                : {}} to="/news">Noticias</NavLink></li>
                         <li><NavLink style={({ isActive }) =>
                             isActive
                                 ? {
                                     color: '#fff',
                                     background: '#3B82F6',
                                 }
-                                : {  }} to="/contact">Contacto</NavLink></li>
+                                : {}} to="/contact">Contacto</NavLink></li>
                     </ul>
                 </div>
             </div>
@@ -101,4 +106,4 @@ const navbar = (props) => {
     );
 }
 
-export default navbar;
+export default Navbar;
