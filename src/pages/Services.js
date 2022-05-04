@@ -23,7 +23,7 @@ function Services() {
                 </div>
                 <h1 className="text-3xl text-blue-700 font-comfortaa font-bold text-center mt-14">Así es como trabajamos.</h1>
                 <p className="px-8">Con el análisis, el diseño y la implementación de herramientas ya probadas que funcionan, te conducimos a la innovación.</p>
-                <div className='gap-4 ml-3 mt-6 justify-start items-stretch flex-wrap flex text-center lg:text-left'>
+                <div className='gap-4 ml-3 mt-6 justify-center items-stretch flex-wrap flex text-center lg:text-left'>
                     <div className="flex flex-col items-center lg:items-start p-9" style={{ flex: '0 0 330px' }}>
                         <div><FaGraduationCap className="text-blue-700" size={45} /></div>
                         <h4 className="text-black text-2xl my-3 pr-10">Investigamos y planificamos.</h4>
@@ -71,30 +71,30 @@ function Services() {
                                 <input className='input input-bordered input-primary w-full bg-gray-100 border-white' type="pais" name="pais" id="mensaje" placeholder="País *" />
                             </div>
                             <h4 className="py-6 text-lg">¿Qué podemos ayudarte? *</h4>
-                            <div class="text-gray-500 font-medium form-control">
+                            <div className="text-gray-500 font-medium form-control">
                                 <label className="pb-2 cursor-pointer flex justify-start items-center">
                                     <input type="checkbox" className="checkbox checkbox-sm checkbox-primary" />
-                                    <span class="px-3">Me gustaría usar Design Sprints para ayudarme a crear o mejorar un producto tecnológico (remoto o en persona).</span>
+                                    <span className="px-3">Me gustaría usar Design Sprints para ayudarme a crear o mejorar un producto tecnológico (remoto o en persona).</span>
                                 </label>
                                 <label className="pb-2 cursor-pointer flex justify-start items-center">
                                     <input type="checkbox" className="checkbox checkbox-sm checkbox-primary" />
-                                    <span class="px-3">La formación presencial en creatividad y sprints de diseño es algo que me gustaría hacer por mi equipo.</span>
+                                    <span className="px-3">La formación presencial en creatividad y sprints de diseño es algo que me gustaría hacer por mi equipo.</span>
                                 </label>
                                 <label className="pb-2 cursor-pointer flex justify-start items-center">
                                     <input type="checkbox" className="checkbox checkbox-sm checkbox-primary" />
-                                    <span class="px-3">Me gustaría usar Internet para capacitar a mi equipo sobre innovación y sprints de diseño.</span>
+                                    <span className="px-3">Me gustaría usar Internet para capacitar a mi equipo sobre innovación y sprints de diseño.</span>
                                 </label>
                                 <label className="pb-2 cursor-pointer flex justify-start items-center">
                                     <input type="checkbox" className="checkbox checkbox-sm checkbox-primary" />
-                                    <span class="px-3">Quisiera obtener servicios de marketing y consultoría estratégica</span>
+                                    <span className="px-3">Quisiera obtener servicios de marketing y consultoría estratégica</span>
                                 </label>
                                 <label className="pb-2 cursor-pointer flex justify-start items-center">
                                     <input type="checkbox" className="checkbox checkbox-sm checkbox-primary" />
-                                    <span class="px-3">Me gustaría consultoría en servicios de comercio electrónico, para su creación, implementación o crecimiento</span>
+                                    <span className="px-3">Me gustaría consultoría en servicios de comercio electrónico, para su creación, implementación o crecimiento</span>
                                 </label>
                                 <label className="pb-2 cursor-pointer flex justify-start items-center">
                                     <input type="checkbox" className="checkbox checkbox-sm checkbox-primary" />
-                                    <span class="px-3">Soy un emprendedor con una idea genial y necesito un equipo que me ayude a hacerla realidad con un Sprint de estrategia, me gustaría recibir ayuda con las prioridades de la estrategia.</span>
+                                    <span className="px-3">Soy un emprendedor con una idea genial y necesito un equipo que me ayude a hacerla realidad con un Sprint de estrategia, me gustaría recibir ayuda con las prioridades de la estrategia.</span>
                                 </label>
                             </div>
                             <hr className="mt-4 mb-2"/>

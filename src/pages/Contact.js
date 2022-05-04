@@ -23,7 +23,7 @@ function Contact() {
                     <p className='text-blue-700 font-comfortaa pt-8'>Dirección</p>
                     <p>San Miguel de Tucumán (4000) Tucumán, Argentina</p>
                     <p className='text-blue-700 font-comfortaa pt-6'>Teléfono</p>
-                    <p className='font-mono'>+54 381 3174279/+54 381 5512810</p>
+                    <p className='font-mono'><a href='tel:+543813174279'>+54 381 3174279</a>/<a href='tel:+543815512810'>+54 381 5512810</a></p>
                     <p className='text-blue-700 font-comfortaa pt-6'>Correo electrónico</p>
                     <p>info@lab9.co</p>
                     <div className='text-blue-700 mt-10 grid grid-flow-col justify-start gap-10'>
