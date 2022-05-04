@@ -1,4 +1,4 @@
-export default [
+const datos = [
     {
         titulo: "¿Qué hace un Content Manager?",
         imagen: "https://lab9.co/wp-content/uploads/2022/03/pexels-liza-summer-6347919-1024x683.jpg"
@@ -96,3 +96,5 @@ export default [
         imagen: "https://lab9.co/wp-content/uploads/2021/02/blog-one-1024x683.jpeg"
     },
 ];
+
+export default datos;

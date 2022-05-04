@@ -27,10 +27,10 @@ function Contact() {
                     <p className='text-blue-700 font-comfortaa pt-6'>Correo electrónico</p>
                     <p>info@lab9.co</p>
                     <div className='text-blue-700 mt-10 grid grid-flow-col justify-start gap-10'>
-                        <a href='https://www.facebook.com/lab9.digital.agency' target={'_blank'}><FaFacebookSquare size={30} /></a>
-                        <a href='https://www.instagram.com/lab9.agencia/' target={'_blank'}><FaInstagram size={30} /></a>
-                        <a href='https://www.linkedin.com/company/lab-9-agencia-digital' target={'_blank'}><FaLinkedin size={30} /></a>
-                        <a href='https://api.whatsapp.com/send?phone=5493815512810&text=Hola,%20me%20interesa%20comunicarme%20con%20Lab9' target={'_blank'}><FaWhatsapp size={30} /></a>
+                        <a href='https://www.facebook.com/lab9.digital.agency' rel="noreferrer" target={'_blank'}><FaFacebookSquare size={30} /></a>
+                        <a href='https://www.instagram.com/lab9.agencia/' rel="noreferrer" target={'_blank'}><FaInstagram size={30} /></a>
+                        <a href='https://www.linkedin.com/company/lab-9-agencia-digital' rel="noreferrer" target={'_blank'}><FaLinkedin size={30} /></a>
+                        <a href='https://api.whatsapp.com/send?phone=5493815512810&text=Hola,%20me%20interesa%20comunicarme%20con%20Lab9' rel="noreferrer" target={'_blank'}><FaWhatsapp size={30} /></a>
                     </div>
                 </div>
                 <div className='h-screen lg:w-1/2 rounded-3xl text-black bg-white shadow-xl'>

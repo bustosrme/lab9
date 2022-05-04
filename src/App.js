@@ -26,31 +26,31 @@ function App() {
         <p className='text-black font-chivo mt-10 mx-40 mb-48 text-left font-light'>Te ofrecemos soluciones de calidad de acuerdo a tu presupuesto, con la rapidez, eficacia y confianza que nos caracteriza.
           Tenemos la visión de transformación y crecimiento para empresas de distintos tamaños, en diferentes países de todo el mundo.</p>
         <h4 className='text-xl mb-16'>Trabajos</h4>
-        <div className="card card-side text-white bg-blue-700 text-left shadow-xl mx-5 py-10 mb-20">
-          <div className="card-body w-1/2">
-            <h1 className="card-title py-6 font-comfortaa font-bold text-6xl">Ximaro</h1>
-            <p className='mt-5'>Empresa de venta minorista y mayorista de insumos electrónicos y todo tipo de accesorios.</p>
-            <div className="card-actions justify-start">
-              <button className="btn btn-sm btn-primary text-blue-700 bg-white rounded-2xl">Ver caso</button>
+        <div className="card lg:card-side justify-center lg:justify-between items-stretch flex-wrap flex mb-20 text-white bg-blue-700 mx-5 lg:mx-32  text-left shadow-xl">
+          <div className="lg:card-body w-5/6 pt-7 pl-7 lg:w-1/3">
+            <h1 className="card-title pt-3 font-comfortaa font-bold text-6xl">Ximaro</h1>
+            <p className='mt-2'>Empresa de venta minorista y mayorista de insumos electrónicos y todo tipo de accesorios.</p>
+            <div className="card-actions justify-start my-7 lg:mt-20">
+              <button className="btn btn-sm btn-primary w-1/3 text-blue-700 bg-white rounded-2xl">Ver caso</button>
             </div>
           </div>
-          <figure className='w-2/3 h-2/3 p-5 mr-5'><img src={require("./images/home/06.jpg")} className="rounded-2xl" alt="Movie" /></figure>
+          <figure className='p-7' style={{ flex: '0 0 480px' }}><img src={require("./images/home/06.jpg")} className="rounded-2xl" alt="Movie" /></figure>
         </div>
-        <div className='grid gap-4 px-5' style={{ gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))" }}>
-          <div className="card w-auto shadow-xl">
-            <figure className='max-h-72'><img src="https://lab9.co/wp-content/uploads/2022/03/imagen-proyecto-v2.jpg" alt="Shoes" /></figure>
+        <div className='justify-center items-stretch flex-wrap flex gap-4 px-5'>
+          <div className="card w-auto shadow-xl" style={{ flex: '0 0 480px' }}>
+            <figure className='max-h-64 overflow-hidden'><img src="https://lab9.co/wp-content/uploads/2022/03/imagen-proyecto-v2.jpg" alt="Shoes" /></figure>
             <div className="card-body">
-              <h2 className="card-title py-6 text-blue-700 font-comfortaa font-bold">Sonet</h2>
+              <h2 className="card-title py-5 text-blue-700 font-comfortaa font-bold">Sonet</h2>
               <p className='text-left text-base-200 font-chivo font-light text-lg'>Sonet es una comunidad de profesionales dedicados al desarrollo de asentamientos humanos en otros mundos, especialmente en La Luna y Marte.</p>
               <div className="card-actions py-6 justify-start">
                 <button className="btn btn-sm btn-outline btn-primary rounded-xl">Ver caso</button>
               </div>
             </div>
           </div>
-          <div className="card w-auto shadow-xl">
-            <figure className='max-h-72'><img src="https://lab9.co/wp-content/uploads/2022/03/Portadas-1024x576.jpg" alt="Shoes" /></figure>
+          <div className="card w-auto shadow-xl" style={{ flex: '0 0 480px' }}>
+            <figure className='max-h-64 overflow-hidden'><img src="https://lab9.co/wp-content/uploads/2022/03/Portadas-1024x576.jpg" alt="Shoes" /></figure>
             <div className="card-body">
-              <h2 className="card-title py-6 text-blue-700 font-comfortaa font-bold">Petersburg</h2>
+              <h2 className="card-title py-5 text-blue-700 font-comfortaa font-bold">Petersburg</h2>
               <p className='text-left text-base-200 font-chivo font-light text-lg'>La tienda de hamburguesas que llega a revolucionar el concepto de las hamburgueserías.</p>
               <div className="card-actions py-6 justify-start">
                 <button className="btn btn-sm btn-outline btn-primary rounded-xl">Ver caso</button>
