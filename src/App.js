@@ -114,8 +114,8 @@ function App() {
             <div className='justify-center items-center gap-y-11 flex-wrap flex'>
               <button className='bg-white btn hover:bg-white font-mono text-base font-light text-base-200 rounded-none border-0'>SABRINA GANS @SHARYCO</button>
               <div className='border-2 p-5 w-fit ml-20'>
-                <iframe id="player" type="text/html" width="640" height="360"
-                  src="http://www.youtube.com/embed/UhCBuiO9kN4?enablejsapi=1&" />
+                <iframe id="player" type="text/html" width="640" height="360" title='Video Sabrina Gans'
+                  src="https://www.youtube.com/embed/UhCBuiO9kN4?enablejsapi=1&" />
               </div>
             </div>
           </div>
