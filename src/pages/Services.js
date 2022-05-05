@@ -6,6 +6,13 @@ import tarjetasInicio from '../js/tarjetasInicio';
 import { FaGraduationCap } from 'react-icons/fa'
 import { AiOutlineHighlight } from 'react-icons/ai'
 import { TiLocationArrowOutline } from 'react-icons/ti'
+import { Field, Form } from "react-final-form";
+
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const onSubmit = async values => {
+    await sleep(300);
+    window.alert(JSON.stringify(values, 0, 2));
+};
 
 function Services() {
     return (
@@ -50,8 +57,118 @@ function Services() {
                 <div className="text-black p-2 mt-32">
                     <h1 className="text-5xl font-comfortaa font-bold mb-7">¡Ponte en contacto con nosotros!</h1>
                     <p>Diseñamos soluciones digitales para las empresas más exitosas del mundo. Podemos ayudarlo a diseñar un nuevo producto desde cero, desarrollar un producto existente o inspirar a su equipo para que sea más creativo. Solicite una consulta utilizando este formulario para obtener más información:</p>
-                    <div className="bg-white lg:mx-28 px-8 py-2 mt-10 rounded-3xl font-chivo font-bold">
-                        <form className="" style={{ maxWidth: "100%" }}>
+                    <div className="bg-white lg:mx-28 px-8 py-2 mt-10 rounded-3xl shadow-xl font-chivo font-bold">
+                        <Form
+                            onSubmit={onSubmit}
+                            render={() => (
+                                <form className='px-10 pb-10 text-justify' onSubmit={onSubmit} style={{ maxWidth: "100%" }}>
+                                    <Field
+                                        className='input input-bordered input-primary w-full bg-gray-100 border-white mt-7'
+                                        name='name'
+                                        component='input'
+                                        type='text'
+                                        placeholder='Nombre *'
+                                    />
+                                    <Field
+                                        className='input input-bordered input-primary w-full bg-gray-100 border-white mt-7'
+                                        name='commpany'
+                                        component='input'
+                                        type='text'
+                                        placeholder='Nombre de la Empresa *'
+                                    />
+                                    <Field
+                                        className='input input-bordered input-primary w-full bg-gray-100 border-white mt-7'
+                                        name='email'
+                                        component='input'
+                                        type='email'
+                                        placeholder='Correo Electrónico de la Empresa'
+                                    />
+                                    <Field
+                                        className='input input-bordered input-primary w-full bg-gray-100 border-white mt-7'
+                                        name='job'
+                                        component='input'
+                                        type='text'
+                                        placeholder='¿Cual es su título en la empresa? *'
+                                    />
+                                    <Field
+                                        className='input input-bordered input-primary w-full bg-gray-100 border-white mt-7'
+                                        name='phone'
+                                        component='input'
+                                        type='tel'
+                                        placeholder='Número de teléfono *'
+                                    />
+                                    <Field
+                                        className='input input-bordered input-primary w-full bg-gray-100 border-white mt-7'
+                                        name='country'
+                                        component='input'
+                                        type='text'
+                                        placeholder='País *'
+                                    />
+                                    <h4 className="py-6 text-lg">¿Qué podemos ayudarte? *</h4>
+                                    <div className="text-gray-700 font-medium form-control">
+                                        <label className="pb-2 cursor-pointer flex justify-start items-center">
+                                            <Field
+                                                className="checkbox checkbox-sm checkbox-primary"
+                                                name="service"
+                                                component="input"
+                                                type="checkbox"
+                                                value="1"
+                                            />
+                                            <span className="px-3">Me gustaría usar Design Sprints para ayudarme a crear o mejorar un producto tecnológico (remoto o en persona).</span>
+                                        </label>
+                                        <label className="pb-2 cursor-pointer flex justify-start items-center">
+                                            <Field
+                                                className="checkbox checkbox-sm checkbox-primary"
+                                                name="service"
+                                                component="input"
+                                                type="checkbox"
+                                                value="2"
+                                            /><span className="px-3">La formación presencial en creatividad y sprints de diseño es algo que me gustaría hacer por mi equipo.</span>
+                                        </label>
+                                        <label className="pb-2 cursor-pointer flex justify-start items-center">
+                                            <Field
+                                                className="checkbox checkbox-sm checkbox-primary"
+                                                name="service"
+                                                component="input"
+                                                type="checkbox"
+                                                value="3"
+                                            /><span className="px-3">Me gustaría usar Internet para capacitar a mi equipo sobre innovación y sprints de diseño.</span>
+                                        </label>
+                                        <label className="pb-2 cursor-pointer flex justify-start items-center">
+                                            <Field
+                                                className="checkbox checkbox-sm checkbox-primary"
+                                                name="service"
+                                                component="input"
+                                                type="checkbox"
+                                                value="4"
+                                            /><span className="px-3">Quisiera obtener servicios de marketing y consultoría estratégica</span>
+                                        </label>
+                                        <label className="pb-2 cursor-pointer flex justify-start items-center">
+                                            <Field
+                                                className="checkbox checkbox-sm checkbox-primary"
+                                                name="service"
+                                                component="input"
+                                                type="checkbox"
+                                                value="5"
+                                            /><span className="px-3">Me gustaría consultoría en servicios de comercio electrónico, para su creación, implementación o crecimiento</span>
+                                        </label>
+                                        <label className="pb-2 cursor-pointer flex justify-start items-center">
+                                            <Field
+                                                className="checkbox checkbox-sm checkbox-primary"
+                                                name="service"
+                                                component="input"
+                                                type="checkbox"
+                                                value="6"
+                                            /><span className="px-3">Soy un emprendedor con una idea genial y necesito un equipo que me ayude a hacerla realidad con un Sprint de estrategia, me gustaría recibir ayuda con las prioridades de la estrategia.</span>
+                                        </label>
+                                    </div>
+                                    <hr className="mt-4 mb-2" />
+                                    <h5 className="text-gray-400 text-sm font-light mb-8">Tiene la opción de darse de baja de estos correos electrónicos en cualquier momento. Consulte nuestra Política de privacidad para obtener más detalles sobre cómo cancelar la suscripción, nuestras políticas de privacidad y cómo nos comprometemos a preservar y mantener su privacidad.</h5>
+                                    <button className='btn btn-primary' type="submit" name="enviar" id="enviar"><p>Enviar</p></button>
+                                </form>
+                            )}
+                        />
+                        {/* <form className="" style={{ maxWidth: "100%" }}>
                             <div className="pt-7">
                                 <input className='input input-bordered input-primary w-full bg-gray-100 border-white' type="text" name="nombre" id="nombre" placeholder="Nombre *" />
                             </div>
@@ -100,7 +217,7 @@ function Services() {
                             <hr className="mt-4 mb-2"/>
                             <h5 className="text-gray-400 text-sm font-light mb-8">Tiene la opción de darse de baja de estos correos electrónicos en cualquier momento. Consulte nuestra Política de privacidad para obtener más detalles sobre cómo cancelar la suscripción, nuestras políticas de privacidad y cómo nos comprometemos a preservar y mantener su privacidad.</h5>
                             <button className='btn btn-primary' type="submit"><p>Enviar</p></button>
-                        </form>
+                        </form> */}
                     </div>
                 </div>
             </div>

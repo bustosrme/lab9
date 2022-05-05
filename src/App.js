@@ -6,6 +6,13 @@ import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import tarjetasInicio from './js/tarjetasInicio';
 import CardInicio from './components/CardInicio';
+import { Field, Form } from 'react-final-form';
+
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const onSubmit = async values => {
+    await sleep(300);
+    window.alert(JSON.stringify(values, 0, 2));
+};
 
 function App() {
   return (
@@ -66,8 +73,40 @@ function App() {
           <div className='gap-4 ml-3 mt-8 justify-center items-stretch flex-wrap flex' >
             <CardInicio tarjetasInicio={tarjetasInicio} />
           </div>
-          <h4 className='text-xl mt-36'>Que hacemos nosotros?</h4>
+          <h4 className='text-xl mt-36'>¿Qué es un Design Sprint?</h4>
           <p className='font-light text-black p-8 text-left'>Aplicamos un método Design Thinking que se utiliza para resolver problemas complejos mediante la creación conjunta y rápida de prototipos de la mano con las pruebas cualitativas con usuarios específicos.</p>
+          <div className='w-full flex flex-row flex-nowrap items-start mb-24 px-5'>
+            <div className='text-black hover:text-white bg-white hover:bg-violet-600 rounded-3xl opacity-80 pt-24 h-96 w-1/5'>
+              <h3 className=' mb-5'>Día 1</h3>
+              <img src="https://lab9.co/wp-content/uploads/2021/02/eclip.png" alt="" />
+              <h2 className='mt-5'>Mapa</h2>
+              <p className='text-white mt-5 mb-7 px-5 font-chivo font-bold'>Crea un mapa y elige un objetivo</p>
+            </div>
+            <div className='text-black hover:text-white bg-white hover:bg-violet-600 rounded-3xl opacity-80 pt-24 h-96 w-1/5'>
+              <h3 className=' mb-5'>Día 2</h3>
+              <img src="https://lab9.co/wp-content/uploads/2021/02/eclip.png" alt="" />
+              <h2 className='mt-5'>Boceto</h2>
+              <p className='text-white mt-5 mb-7 px-5 font-chivo font-bold'>Analizar, investigar y generar ideas para posibles soluciones.</p>
+            </div>
+            <div className='text-black hover:text-white bg-white hover:bg-violet-600 rounded-3xl opacity-80 pt-24 h-96 w-1/5'>
+              <h3 className=' mb-5'>Día 3</h3>
+              <img src="https://lab9.co/wp-content/uploads/2021/02/eclip.png" alt="" />
+              <h2 className='mt-5'>Decidir</h2>
+              <p className='text-white mt-5 mb-7 px-5 font-chivo font-bold'>Seleccione las mejores soluciones para seguir adelante.</p>
+            </div>
+            <div className='text-black hover:text-white bg-white hover:bg-violet-600 rounded-3xl opacity-80 pt-24 h-96 w-1/5'>
+              <h3 className=' mb-5'>Día 4</h3>
+              <img src="https://lab9.co/wp-content/uploads/2021/02/eclip.png" alt="" />
+              <h2 className='mt-5'>Prototipo</h2>
+              <p className='text-white mt-5 mb-7 px-5 font-chivo font-bold'>Construiremos un prototipo de nuestro nuevo producto / servicio centrado en la usabilidad.</p>
+            </div>
+            <div className='text-black hover:text-white bg-white hover:bg-violet-600 rounded-3xl opacity-80 pt-24 h-96 w-1/5'>
+              <h3 className=' mb-5'>Día 5</h3>
+              <img src="https://lab9.co/wp-content/uploads/2021/02/eclip.png" alt="" />
+              <h2 className='mt-5'>Prueba</h2>
+              <p className='text-white mt-5 mb-7 px-5 font-chivo font-bold'>Finalmente lo probaremos con sus clientes reales.</p>
+            </div>
+          </div>
         </div>
         <div className='font-comfortaa font-bold text-xl bg-cover h-screen bg-[url("https://lab9.co/wp-content/uploads/2022/02/pexels-startup-stock-photos-7096-scaled.jpg")]'>
           <div className='bg-purple-900 bg-cover h-screen bg-opacity-80'>
@@ -97,28 +136,57 @@ function App() {
       </div>
       <div className='lg:flex px-10 lg:px-28 justify-center mt-20 gap-12'>
         <div className='h-screen lg:w-1/2 rounded-3xl text-black bg-white shadow-xl'>
-          <form className='px-10 pb-10'>
-            <div>
-              <label className='block pt-6'>Nombre<span className="obligatorio">*</span></label>
-              <input className='input input-bordered input-primary w-full bg-gray-100 border-white' type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Nombre" />
-            </div>
-            <div>
-              <label className='block pt-6'>Email<span className="obligatorio">*</span></label>
-              <input className='input input-bordered input-primary w-full bg-gray-100 border-white' type="email" name="introducir_email" id="email" required="obligatorio" placeholder="Correo Electrónico" />
-            </div>
-            <div>
-              <label className='block pt-6'>Asunto<span className="obligatorio">*</span></label>
-              <input className='input input-bordered input-primary w-full bg-gray-100 border-white' type="text" name="introducir_asunto" id="assunto" required="obligatorio" placeholder="Asunto" />
-            </div>
-            <div>
-              <label className='block pt-6'>Mensaje<span className="obligatorio">*</span></label>
-              <input className='input input-bordered input-primary w-full bg-gray-100 border-white h-24' name="introducir_mensaje" id="mensaje" required="obligatorio" placeholder="Deja aquí tu mensaje..." />
-            </div>
-            <p className="pt-4 pb-10 text-sm">
-              <span className="obligatorio"> * </span>los campos son obligatorios.
-            </p>
-            <button className='btn btn-primary' type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
-          </form>
+          <Form
+            onSubmit={onSubmit}
+            render={() => (
+              <form className='px-10 pb-10' onSubmit={onSubmit}>
+                <div>
+                  <label className='block pt-6'>Nombre<span>*</span></label>
+                  <Field
+                    className='input input-bordered input-primary w-full bg-gray-100 border-white'
+                    name='name'
+                    component='input'
+                    type='text'
+                    placeholder='Nombre'
+                  />
+                </div>
+                <div>
+                  <label className='block pt-6'>Email<span>*</span></label>
+                  <Field
+                    className='input input-bordered input-primary w-full bg-gray-100 border-white'
+                    name='email'
+                    component='input'
+                    type='email'
+                    placeholder='Correo Electrónico'
+                  />
+                </div>
+                <div>
+                  <label className='block pt-6'>Asunto<span>*</span></label>
+                  <Field
+                    className='input input-bordered input-primary w-full bg-gray-100 border-white'
+                    name='issue'
+                    component='input'
+                    type='text'
+                    placeholder='Asunto'
+                  />
+                </div>
+                <div>
+                  <label className='block pt-6'>Mensaje<span>*</span></label>
+                  <Field
+                    className='input input-bordered input-primary w-full bg-gray-100 border-white'
+                    name='message'
+                    component='input'
+                    type='text'
+                    placeholder='Deja aquí tu mensaje...'
+                  />
+                </div>
+                <p className="pt-4 pb-10 text-sm">
+                  <span> * </span>los campos son obligatorios.
+                </p>
+                <button className='btn btn-primary' type="submit" name="enviar" id="enviar"><p>Enviar</p></button>
+              </form>
+            )}
+          />
         </div>
         <div className='lg:w-1/2 text-lg text-gray-600 font-chivo'>
           <p className='py-2 pr-28'>Llame a este número para obtener asistencia inmediata</p>

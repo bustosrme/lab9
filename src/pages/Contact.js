@@ -4,8 +4,8 @@ import Footer from '../components/Footer';
 import React from "react";
 import { Form, Field } from 'react-final-form';
 
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const onSubmit = async values => {
-    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
     await sleep(300);
     window.alert(JSON.stringify(values, 0, 2));
 };
@@ -33,29 +33,58 @@ function Contact() {
                         <a href='https://api.whatsapp.com/send?phone=5493815512810&text=Hola,%20me%20interesa%20comunicarme%20con%20Lab9' rel="noreferrer" target={'_blank'}><FaWhatsapp size={30} /></a>
                     </div>
                 </div>
-                <div className='h-screen lg:w-1/2 rounded-3xl text-black bg-white shadow-xl'>
-                    <form className='px-10 pb-10' onSubmit={onSubmit}>
-                        <div>
-                            <label className='block pt-6'>Nombre<span className="obligatorio">*</span></label>
-                            <input className='input input-bordered input-primary w-full bg-gray-100 border-white' type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Nombre" />
-                        </div>
-                        <div>
-                            <label className='block pt-6'>Email<span className="obligatorio">*</span></label>
-                            <input className='input input-bordered input-primary w-full bg-gray-100 border-white' type="email" name="introducir_email" id="email" required="obligatorio" placeholder="Correo Electrónico" />
-                        </div>
-                        <div>
-                            <label className='block pt-6'>Asunto<span className="obligatorio">*</span></label>
-                            <input className='input input-bordered input-primary w-full bg-gray-100 border-white' type="text" name="introducir_asunto" id="assunto" required="obligatorio" placeholder="Asunto" />
-                        </div>
-                        <div>
-                            <label className='block pt-6'>Mensaje<span className="obligatorio">*</span></label>
-                            <input className='input input-bordered input-primary w-full bg-gray-100 border-white h-24' name="introducir_mensaje" id="mensaje" required="obligatorio" placeholder="Deja aquí tu mensaje..." />
-                        </div>
-                        <p className="pt-4 pb-10 text-sm">
-                            <span className="obligatorio"> * </span>los campos son obligatorios.
-                        </p>
-                        <button className='btn btn-primary' type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
-                    </form>
+                <div className='h-full lg:w-1/2 rounded-3xl text-black bg-white shadow-xl'>
+                    <Form
+                        onSubmit={onSubmit}
+                        render={ () => (
+                            <form className='px-10 pb-10' onSubmit={onSubmit}>
+                                <div>
+                                    <label className='block pt-6'>Nombre<span>*</span></label>
+                                    <Field
+                                        className='input input-bordered input-primary w-full bg-gray-100 border-white' 
+                                        name='name'
+                                        component='input'
+                                        type='text'
+                                        placeholder='Nombre'
+                                    />
+                                </div>
+                                <div>
+                                    <label className='block pt-6'>Email<span>*</span></label>
+                                    <Field
+                                        className='input input-bordered input-primary w-full bg-gray-100 border-white' 
+                                        name='email'
+                                        component='input'
+                                        type='email'
+                                        placeholder='Correo Electrónico'
+                                    />
+                                </div>
+                                <div>
+                                    <label className='block pt-6'>Asunto<span>*</span></label>
+                                    <Field
+                                        className='input input-bordered input-primary w-full bg-gray-100 border-white' 
+                                        name='issue'
+                                        component='input'
+                                        type='text'
+                                        placeholder='Asunto'
+                                    />
+                                </div>
+                                <div>
+                                    <label className='block pt-6'>Mensaje<span>*</span></label>
+                                    <Field
+                                        className='input input-bordered input-primary w-full bg-gray-100 border-white' 
+                                        name='message'
+                                        component='input'
+                                        type='text'
+                                        placeholder='Deja aquí tu mensaje...'
+                                    />
+                                </div>
+                                <p className="pt-4 pb-10 text-sm">
+                                    <span> * </span>los campos son obligatorios.
+                                </p>
+                                <button className='btn btn-primary' type="submit" name="enviar" id="enviar"><p>Enviar</p></button>
+                            </form>
+                        )}
+                    />
                 </div>
             </div>
             <Footer />
