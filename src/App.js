@@ -68,7 +68,7 @@ function App() {
         <Link to='/jobs'>
           <button className="btn btn-primary rounded-xl mt-32 from-purple-500 bg-gradient-to-tl">Ver todos los trabajos</button>
         </Link>
-        <div className='font-comfortaa font-bold ' style={{ backgroundImage: `url("http://lab9.co/wp-content/uploads/2021/02/Eclipse.png")` }}>
+        <div className='font-comfortaa font-bold px-24' style={{ backgroundImage: `url("http://lab9.co/wp-content/uploads/2021/02/Eclipse.png")` }}>
           <h4 className='text-xl mt-40'>Que hacemos nosotros?</h4>
           <div className='gap-4 ml-3 mt-8 justify-center items-stretch flex-wrap flex' >
             <CardInicio tarjetasInicio={tarjetasInicio} />

@@ -18,7 +18,8 @@ const News = () => {
                 </div>
             </div>
             <h1 className='text-4xl text-center text-black pb-16'>No te pierdas ningun post</h1>
-            <div className='grid gap-4 ml-10' style={{ gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))" }}>
+            <div className='gap-4 ml-3 mt-8 justify-center items-stretch flex-wrap flex'>
+            {/* <div className='grid gap-4 ml-10' style={{ gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))" }}> */}
                 <Card tarjetas={tarjetas} />
             </div>
             <Footer />
